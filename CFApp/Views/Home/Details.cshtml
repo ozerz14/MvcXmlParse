@@ -1,0 +1,36 @@
+﻿@model CFApp.Data.TestEntity
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TestEntity</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.No)
+    </div>
+
+     
+</fieldset>
+<p>
+    @Html.ActionLink("Back to Main Page", "Index")
+</p>
