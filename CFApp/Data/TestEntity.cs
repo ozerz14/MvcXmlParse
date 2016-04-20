@@ -7,7 +7,7 @@ using System.Web;
 
 namespace CFApp.Data
 {
-    [Table("tblTest")]  // veri tabanındaki tablo ile eşleşmeyi sağlamak için
+    [Table("tblViewModel")]  // veri tabanındaki tablo ile eşleşmeyi sağlamak için
     public class TestEntity
     {
         public int Id { get; set; }
@@ -15,7 +15,7 @@ namespace CFApp.Data
         public string Name { get; set; }
         public string Surname { get; set; }
       //  [Column ("No")]
-       public string No { get; set; }
+       public int No { get; set; }
 
     }
 }

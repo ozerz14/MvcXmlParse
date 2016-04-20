@@ -13,9 +13,9 @@ namespace CFApp.Controllers
     {
         CFTestContext _context = new CFTestContext();
 
-        public ActionResult Index(string sortOrder, string searchString) // get all elements in db 
+        public ActionResult Index() // get all elements in db 
         {
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+           /* ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var students = from s in _context.TestEntities
                            select s;
@@ -39,8 +39,8 @@ namespace CFApp.Controllers
                     students = students.OrderBy(s => s.Surname);
                     break;
             }
-
-            return View(students.ToList());
+            */
+            return View(_context.TestEntities.ToList());
            // return View(_context.TestEntities.ToList());
         }
 
@@ -107,6 +107,8 @@ namespace CFApp.Controllers
         
             return View(models.ToList()); // bulduklarının listesini dönüyor*/
         }
+
+
 
     }
 }

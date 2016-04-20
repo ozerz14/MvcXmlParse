@@ -38,11 +38,29 @@ namespace CFApp.Data
 
         public ActionResult Create()
         {
-            return View();
+            ViewModelEntity vment = new ViewModelEntity();
+            vment.control = true;
+            return View(vment);
         }
 
+
+        [HttpPost]
+        public ActionResult Create(ViewModelEntity testentity)
+        {
+            if (ModelState.IsValid)
+            {
+                TestEntity tst = new TestEntity
+                 {
+                     Name= testentity.Name,
+                     No= testentity.control ? 1:0, 
+                     Surname=""
+                 };
+                return View(tst);
+            }
+         return RedirectToAction("Index", "Home");
+        }
         //
-        // POST: /TestEntities/Create
+      /*  // POST: /TestEntities/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -57,7 +75,7 @@ namespace CFApp.Data
 
             return View(testentity);
         }
-
+        */
         //
         // GET: /TestEntities/Edit/5
 
